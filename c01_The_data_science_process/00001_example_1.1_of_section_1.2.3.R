@@ -2,7 +2,9 @@
 # (example 1.1 of section 1.2.3)  : The data science process : Stages of a data science project : Modeling 
 # Title: Building a decision tree 
 
+library('dplyr')
 library('rpart')
+
 load('GCDData.RData')
 model <- rpart(Good.Loan ~
    Duration.in.month +
@@ -13,3 +15,5 @@ model <- rpart(Good.Loan ~
    control=rpart.control(maxdepth=4),
    method="class")
 
+plot(model)
+text(model)

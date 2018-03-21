@@ -1,9 +1,11 @@
 # example 3.1 of section 3.1 
 # (example 3.1 of section 3.1)  : Exploring data : Using summary statistics to spot problems 
 # Title: The summary() command 
+getwd()
 
-custdata <- read.table('custdata.tsv',
-   header=TRUE,sep='\t')
+custdata <- read.table('c03_Exploring_data/custdata.csv',header=TRUE,sep=',')
+
+head(custdata)
 summary(custdata)
 ## custid        sex
 ## Min.   :   2068   F:440
