@@ -3,7 +3,9 @@
 # Title: Producing a bar chart with sorted categories 
 
 statesums <- table(custdata$state.of.res) 	# Note: 1 
+statesums
 statef <- as.data.frame(statesums) 	# Note: 2 
+statef
 colnames(statef)<-c("state.of.res", "count") 	# Note: 3 
 summary(statef)  	# Note: 4 
 ## state.of.res     count
@@ -25,11 +27,18 @@ summary(statef)                       	# Note: 6
 ## Alaska      : 1    3rd Qu.: 26.25
 ## Montana     : 1    Max.   :100.00
 ## (Other)     :44
+
+statef %>% tail
+
+str(statef)
+
 ggplot(statef)+ geom_bar(aes(x=state.of.res,y=count),
    stat="identity",              	# Note: 7 
    fill="gray") +
    coord_flip() +                                       	# Note: 8 
    theme(axis.text.y=element_text(size=rel(0.8)))
+
+
 
 # Note 1: 
 #   The table() command aggregates the data by state of residence—exactly the information the bar 

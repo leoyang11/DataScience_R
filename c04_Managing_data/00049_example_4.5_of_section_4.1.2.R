@@ -2,7 +2,19 @@
 # (example 4.5 of section 4.1.2)  : Managing data : Cleaning data : Data transformations 
 # Title: Normalizing income by state 
 
+custdata %>% head()
+
+medianincome2 <- custdata %>% group_by(state.of.res) %>% summarise(m.income = median(income))
+
+
 medianincome <- aggregate(income~state.of.res,custdata,FUN=median)
+medianincome
+
+str(medianincome)
+str(medianincome2)
+
+
+
 colnames(medianincome) <- c('State','Median.Income')
 summary(medianincome)  	# Note: 1 
 

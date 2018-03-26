@@ -3,6 +3,7 @@
 # Title: Producing a line plot 
 
 x <- runif(100)   	# Note: 1 
+x
 y <- x^2 + 0.2*x   	# Note: 2 
 ggplot(data.frame(x=x,y=y), aes(x=x,y=y)) + geom_line()  	# Note: 3
 

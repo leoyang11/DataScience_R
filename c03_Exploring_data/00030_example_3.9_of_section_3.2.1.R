@@ -1,6 +1,15 @@
 # example 3.9 of section 3.2.1 
 # (example 3.9 of section 3.2.1)  : Exploring data : Spotting problems using graphics and visualization : Visually checking distributions for a single variable 
 # Title: Producing a horizontal bar chart 
+getwd()
+setwd("D:/Documents/leo/Rproject_git/Practical_DataScience_R/c03_Exploring_data")
+
+library(dplyr)
+library(ggplot2)
+
+custdata <- read.csv("custdata.csv")
+
+
 
 ggplot(custdata) +
    geom_bar(aes(x=state.of.res), fill="gray") +  	# Note: 1 

@@ -7,6 +7,10 @@ custdata <- read.table('custdata.tsv',
 summary(custdata[is.na(custdata$housing.type), 	# Note: 1 
                    c("recent.move","num.vehicles")]) 	# Note: 2 
 
+colSums(is.na(custdata))
+
+
+
 ##  recent.move     num.vehicles   	# Note: 3 
 ##  Mode:logical   Min.   : NA
 ##  NA's:56        1st Qu.: NA
