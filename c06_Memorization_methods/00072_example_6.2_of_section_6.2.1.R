@@ -2,11 +2,23 @@
 # (example 6.2 of section 6.2.1)  : Memorization methods : Building single-variable models : Using categorical features 
 # Title: Plotting churn grouped by variable 218 levels 
 
+dTrain %>% head()
+outcome
+
+dTrain[,'Var218']
+dTrain[,outcome]
+
+
 table218 <- table(
    Var218=dTrain[,'Var218'], 	# Note: 1 
    churn=dTrain[,outcome], 	# Note: 2 
    useNA='ifany') 	# Note: 3 
 print(table218)
+
+table218[,2] / (table218[,1] + table218[,2])
+
+
+
 ##       churn
 ## Var218    -1     1
 ##   cJvF 19245  1220
